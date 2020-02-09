@@ -1,0 +1,21 @@
+#Create BNA
+	composer archive create -t dir -n .
+
+#Install BNA
+	composer network install --card PeerAdmin@hlfv1 --archiveFile blockchain_network@0.0.1.bna
+
+#Start Chaincode on Network
+	composer network start --networkName blockchain_network --networkVersion 0.0.1 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card
+
+#Import Admin Card
+	composer card import --file networkadmin.card
+
+#Ping Network
+	composer network ping --card admin@blockchain_network
+
+#Upgrade Chaincode on Network
+	composer network upgrade --networkName blockchain_network --networkVersion 0.0.1 --card PeerAdmin@hlfv1
+
+
+
+
