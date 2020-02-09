@@ -23,6 +23,9 @@ ui
 # BNA files
 *.bna
 
+#Identity Cards
+*.card
+
 # idea
 .idea
 
